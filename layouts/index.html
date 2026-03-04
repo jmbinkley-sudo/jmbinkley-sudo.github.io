@@ -1,0 +1,33 @@
+{{ define "main" }}
+  <section class="hero hero-grid">
+    <div>
+      <p class="kicker">Portfolio</p>
+      <h1>{{ .Site.Params.persona }}</h1>
+      <p class="role">{{ .Site.Params.role }}</p>
+      <p class="lead">{{ .Site.Params.intro }}</p>
+      <div class="actions">
+        <a class="button" href="{{ "/resume/" | relURL }}">View Resume</a>
+        <a class="button button-secondary" href="{{ "/projects/" | relURL }}">View Projects</a>
+      </div>
+    </div>
+    <div class="hero-photo card">
+      <img src="{{ .Site.Params.headshot | relURL }}" alt="Portrait of {{ .Site.Params.persona }}">
+    </div>
+  </section>
+
+  <section class="card prose">
+    <h2>Introduction</h2>
+    {{ .Content }}
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h3>Projects</h3>
+      <a class="button" href="{{ "/projects/" | relURL }}">Open Projects</a>
+    </article>
+    <article class="card">
+      <h3>Blog</h3>
+      <a class="button" href="{{ "/blog/" | relURL }}">Read Blog</a>
+    </article>
+  </section>
+{{ end }}

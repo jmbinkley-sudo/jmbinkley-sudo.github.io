@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <section class="card prose">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </section>
+
+  <section class="stack">
+    {{ range .Pages.ByDate.Reverse }}
+      <article class="card">
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ if .Date }}
+          <p class="meta">{{ .Date.Format "January 2, 2006" }}</p>
+        {{ end }}
+        <p>{{ .Summary }}</p>
+      </article>
+    {{ end }}
+  </section>
+{{ end }}

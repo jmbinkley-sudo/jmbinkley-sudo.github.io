@@ -1,0 +1,32 @@
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "Josie Binkley"
+
+[params]
+  persona = "Josie Binkley"
+  role = "Research and Operations Analyst"
+  intro = "Neuroscience student with hands-on research, project coordination, and cross-functional communication experience, pursuing consulting and research-focused opportunities."
+  headshot = "images/Headshot.jpeg"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Resume"
+    pageRef = "/resume"
+    weight = 2
+  [[menu.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 3
+  [[menu.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

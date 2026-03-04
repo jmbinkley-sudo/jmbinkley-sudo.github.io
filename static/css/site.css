@@ -1,0 +1,244 @@
+:root {
+  --bg: #2a2f37;
+  --surface: #3a4049;
+  --surface-2: #454c56;
+  --text: #f2f0ec;
+  --muted: #d7d0c8;
+  --accent: #c8a1ab;
+  --accent-strong: #b68994;
+  --highlight: #8ea382;
+  --border: #5d6674;
+  --shadow: 0 20px 45px rgba(8, 10, 14, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.7;
+  background:
+    radial-gradient(circle at 8% 4%, rgba(200, 161, 171, 0.25), rgba(200, 161, 171, 0) 36%),
+    radial-gradient(circle at 92% 6%, rgba(142, 163, 130, 0.2), rgba(142, 163, 130, 0) 34%),
+    var(--bg);
+}
+
+.container {
+  width: min(100% - 2rem, 1040px);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  background: rgba(42, 47, 55, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 0;
+}
+
+.brand {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.05rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #f4efe8;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding-bottom: 0.18rem;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-list a[aria-current="page"] {
+  color: var(--highlight);
+  border-bottom-color: var(--accent);
+}
+
+.hero {
+  padding: 3.4rem 0 1.5rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.kicker {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.2;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  letter-spacing: 0.01em;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 4.3vw, 3.3rem);
+  margin-bottom: 0.45rem;
+  color: var(--accent-strong);
+}
+
+.role {
+  margin: 0 0 0.55rem;
+  color: #e7d8c4;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 62ch;
+  font-size: 1.04rem;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.hero-photo {
+  padding: 0.65rem;
+  background: linear-gradient(145deg, rgba(142, 163, 130, 0.18), rgba(200, 161, 171, 0.22));
+}
+
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  filter: saturate(0.95) contrast(1.03);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--surface), var(--surface-2));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.55rem 0.95rem;
+  border-radius: 9px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff6fa;
+}
+
+.button:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--highlight);
+  border-color: var(--highlight);
+}
+
+.button-secondary:hover {
+  color: #232933;
+  background: var(--highlight);
+  border-color: var(--highlight);
+}
+
+.prose p,
+.prose li {
+  color: var(--text);
+}
+
+.meta {
+  color: var(--muted);
+  margin-top: -0.3rem;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 0 2rem;
+  color: #d9d0c5;
+}
+
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 760px) {
+  .nav-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 0.55rem 0.9rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 2rem;
+  }
+}
