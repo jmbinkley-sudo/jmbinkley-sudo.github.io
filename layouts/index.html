@@ -1,33 +1,89 @@
-{{ define "main" }}
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.157.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Josie Binkley</title>
+    <link rel="stylesheet" href="/css/site.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="/">Josie Binkley</a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            
+              <li>
+                <a href="/" aria-current="page">
+                  Home
+                </a>
+              </li>
+            
+              <li>
+                <a href="/resume/" >
+                  Resume
+                </a>
+              </li>
+            
+              <li>
+                <a href="/projects/" >
+                  Projects
+                </a>
+              </li>
+            
+              <li>
+                <a href="/blog/" >
+                  Blog
+                </a>
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      
   <section class="hero hero-grid">
     <div>
       <p class="kicker">Portfolio</p>
-      <h1>{{ .Site.Params.persona }}</h1>
-      <p class="role">{{ .Site.Params.role }}</p>
-      <p class="lead">{{ .Site.Params.intro }}</p>
+      <h1>Josie Binkley</h1>
+      <p class="role">Research and Operations Analyst</p>
+      <p class="lead">Neuroscience student with hands-on research, project coordination, and cross-functional communication experience, pursuing consulting and research-focused opportunities.</p>
       <div class="actions">
-        <a class="button" href="{{ "/resume/" | relURL }}">View Resume</a>
-        <a class="button button-secondary" href="{{ "/projects/" | relURL }}">View Projects</a>
+        <a class="button" href="/resume/">View Resume</a>
+        <a class="button button-secondary" href="/projects/">View Projects</a>
       </div>
     </div>
     <div class="hero-photo card">
-      <img src="{{ .Site.Params.headshot | relURL }}" alt="Portrait of {{ .Site.Params.persona }}">
+      <img src="/images/Headshot.jpeg" alt="Portrait of Josie Binkley">
     </div>
   </section>
 
   <section class="card prose">
     <h2>Introduction</h2>
-    {{ .Content }}
+    <p>I am an early-career operations professional with experience in project coordination, compliance-focused documentation, team support, and student engagement. I learn systems quickly, take ownership of execution, and work well across teams in fast-paced environments.</p>
+
   </section>
 
   <section class="grid">
     <article class="card">
       <h3>Projects</h3>
-      <a class="button" href="{{ "/projects/" | relURL }}">Open Projects</a>
+      <a class="button" href="/projects/">Open Projects</a>
     </article>
     <article class="card">
       <h3>Blog</h3>
-      <a class="button" href="{{ "/blog/" | relURL }}">Read Blog</a>
+      <a class="button" href="/blog/">Read Blog</a>
     </article>
   </section>
-{{ end }}
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Josie Binkley. Built with Hugo.</p>
+      </div>
+    </footer>
+  </body>
+</html>
