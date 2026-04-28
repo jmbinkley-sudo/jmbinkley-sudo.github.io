@@ -19,7 +19,7 @@ jobs:
       - name: Install, build, and upload
         uses: withastro/action@v3
         with:
-          path: ./portfolio
+          path: .
 
   deploy:
     needs: build
