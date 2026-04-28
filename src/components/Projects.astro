@@ -1,0 +1,63 @@
+---
+const projects = [
+	{
+		title: "3D-Printed Diatom Modeling",
+		category: "Schniepp Lab",
+		description: "Designing and 3D-printing diatom models using microscopy and basic coding to improve experimental reproducibility and visualization of complex biological structures.",
+		tech: ["3D Printing", "Microscopy", "Coding"],
+		icon: "🔬"
+	},
+	{
+		title: "Neuromodulation Project",
+		category: "Del Negro Lab",
+		description: "Co-leading a multi-phase project coordinating lab meetings, managing timelines, and documenting data for electrophysiological analysis and manuscript preparation.",
+		tech: ["Project Management", "Data Analysis", "Neuromodulation"],
+		icon: "🧠"
+	},
+	{
+		title: "Electrophysiological Recordings",
+		category: "Neuroscience Research",
+		description: "Conducting neonatal mouse CNS dissections and using vibratome sectioning with electrophysiology rigs to study neural activity.",
+		tech: ["CNS Dissection", "Vibratome Sectioning", "Electrophysiology"],
+		icon: "⚡"
+	},
+	{
+		title: "Neurosurgical Protocols",
+		category: "Animal-Based Research",
+		description: "Developing specialized neurosurgical implantation and microinjection protocols in mice to support multidisciplinary research objectives.",
+		tech: ["Stereotactic Surgery", "Microinjection", "Protocol Design"],
+		icon: "📍"
+	}
+];
+---
+
+<section id="projects" class="py-24 bg-[#FBFBF9] text-[#1C1917] border-t border-stone-200">
+	<div class="container mx-auto px-6">
+		<div class="mb-16">
+			<h2 class="text-4xl font-bold mb-4 text-[#1C1917]">Research Highlights</h2>
+			<p class="text-stone-600 max-w-xl text-lg">Specialized projects at the intersection of biology, technology, and operational protocol.</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			{projects.map((project) => (
+				<div class="group p-8 rounded-2xl bg-stone-50 border border-stone-200 hover:border-stone-400 transition-all duration-300 shadow-sm">
+					<div class="text-4xl mb-6">{project.icon}</div>
+					<div class="flex justify-between items-start mb-4">
+						<h3 class="text-2xl font-bold group-hover:text-stone-700 transition-colors">{project.title}</h3>
+						<span class="text-xs font-bold uppercase tracking-widest text-stone-700 bg-rose-50/70 px-3 py-1 rounded-full border border-stone-100">{project.category}</span>
+					</div>
+					<p class="text-stone-600 leading-relaxed mb-8">
+						{project.description}
+					</p>
+					<div class="flex flex-wrap gap-2">
+						{project.tech.map((t) => (
+							<span class="text-xs font-medium text-stone-700 bg-rose-50/70 px-3 py-1 rounded-lg border border-stone-100">
+								{t}
+							</span>
+						))}
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

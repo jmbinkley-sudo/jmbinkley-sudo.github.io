@@ -1,0 +1,52 @@
+---
+const impacts = [
+	{
+		title: "Community Building & Mentorship",
+		role: "Resident Assistant",
+		description: "Orchestrating community engagement for 40+ residents through proactive conflict resolution, mentorship, and personalized crisis response.",
+		icon: "🤝"
+	},
+	{
+		title: "Adaptive Communication",
+		role: "Substitute Teacher",
+		description: "Effectively managing classrooms of up to 50 individuals, translating complex lesson plans across diverse age groups and learning environments.",
+		icon: "📢"
+	},
+	{
+		title: "Organizational Stewardship",
+		role: "Treasurer, Phi Sigma Pi",
+		description: "Directing fiscal strategy and Strategic Project Coordination for a national honor fraternity, ensuring long-term project sustainability and transparency.",
+		icon: "📈"
+	},
+	{
+		title: "Collaborative Research",
+		role: "Lab Coordinator Roles",
+		description: "Co-leading multidisciplinary research teams by aligning technical project timelines with effective team communication and resource synergy.",
+		icon: "✨"
+	}
+];
+---
+
+<section id="leadership" class="py-24 bg-[#FBFBF9] overflow-hidden border-y border-stone-200">
+	<div class="container mx-auto px-6">
+		<div class="max-w-3xl mb-16">
+			<h2 class="text-4xl font-bold text-[#1C1917] mb-6 uppercase tracking-tight">Leadership & Impact</h2>
+			<p class="text-lg text-stone-600 font-light">
+				Beyond technical research, I am committed to fostering collaborative environments and driving organizational success through effective communication and people-first leadership.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+			{impacts.map((item) => (
+				<div class="p-8 rounded-2xl bg-stone-50 border border-stone-200 hover:border-stone-400 transition-all group shadow-sm">
+					<div class="text-4xl mb-6 group-hover:scale-110 transition-transform inline-block">{item.icon}</div>
+					<h3 class="text-xl font-bold text-[#1C1917] mb-2">{item.title}</h3>
+					<p class="text-sm font-semibold text-stone-600 mb-4 uppercase tracking-wider">{item.role}</p>
+					<p class="text-stone-600 leading-relaxed text-sm">
+						{item.description}
+					</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,109 @@
+---
+const experiences = [
+	{
+		title: "Research Assistant | Schniepp Lab",
+		company: "William & Mary",
+		location: "Williamsburg, VA",
+		period: "August 2025 – Present",
+		description: [
+			"Managed Lab Operations for materials to ensure 100% process compliance enforcement and operational reproducibility.",
+			"Executed utilization trend analysis for research equipment, optimizing availability and resource schedules for multi-disciplinary teams.",
+			"Maintained system hygiene for experimental records, ensuring data integrity for project deliverables.",
+			"Implemented rigorous time management protocols to coordinate complex project timelines with faculty and research staff."
+		],
+		tags: ["Lab Operations", "Data Integrity", "Process Compliance"]
+	},
+	{
+		title: "Resident Assistant",
+		company: "William & Mary",
+		location: "Williamsburg, VA",
+		period: "August 2024 – Present",
+		description: [
+			"Orchestrated Strategic Project Coordination for a community of 40+ residents, managing complex schedules and confidential system records.",
+			"Served as a professional services liaison to resolve engagement issues, maintaining high standards of customer service and process compliance.",
+			"Tracked incident reports and utilization trends to inform institutional policy enforcement and resource scheduling.",
+			"Created forecast reporting for recurring workshops and events, optimizing budget and resource allocation."
+		],
+		tags: ["Conflict Resolution", "Budget Optimization", "Strategic Project Coordination"]
+	},
+	{
+		title: "Substitute Teacher",
+		company: "Loudoun County Public Schools",
+		location: "Loudoun County, VA",
+		period: "December 2022 – Present",
+		description: [
+			"Independently managed classroom resource allocation for groups of up to 50 individuals, adapting to diverse organizational systems.",
+			"Maintained system hygiene by tracking student progress and documentation in compliance with organizational standards.",
+			"Demonstrated exceptional time management by delivering structured lesson plans and managing inventory logistics in fast-paced settings."
+		],
+		tags: ["Time Management", "Classroom Management", "Resource Allocation"]
+	},
+	{
+		title: "Treasurer",
+		company: "Phi Sigma Pi | William & Mary",
+		location: "Williamsburg, VA",
+		period: "November 2023 – December 2024",
+		description: [
+			"Conducted utilization trend analysis and forecast reporting for chapter budgets, ensuring 100% fiscal responsibility and resource optimization.",
+			"Managed Strategic Project Coordination for events, overseeing the allocation of funds and logistics using financial management platforms.",
+			"Maintained a skills repository of member talents to optimize engagement for various community and professional services events.",
+			"Tracked and reported on expense compliance, implementing process improvements to increase reporting accuracy."
+		],
+		tags: ["Financial Analysis", "Budgeting", "Expense Compliance"]
+	},
+	{
+		title: "Research Assistant | Del Negro Lab",
+		company: "William & Mary",
+		location: "Williamsburg, VA",
+		period: "November 2022 – November 2024",
+		description: [
+			"Co-led a multi-phase project by coordinating resource timelines and project deliverables.",
+			"Implemented data tracking solutions for research milestones and resource utilization, ensuring high system hygiene and process compliance.",
+			"Drafted standard operating procedures (SOPs) to enforce process compliance and maintain data integrity across lab operations.",
+			"Produced utilization reports for faculty to analyze project health and forecast requirements for future phases."
+		],
+		tags: ["SOP Drafting", "Project Coordination", "Data Integrity"]
+	}
+];
+---
+
+<section id="experience" class="py-24 bg-[#FBFBF9]">
+	<div class="container mx-auto px-6">
+		<div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+			<div>
+				<h2 class="text-4xl font-bold text-[#1C1917] mb-4">Professional Experience</h2>
+				<p class="text-stone-600 max-w-xl text-lg">A track record of operational excellence in academic research and organizational leadership.</p>
+			</div>
+			<div class="mt-6 md:mt-0">
+				<a href="#" class="text-[#1C1917] font-bold border-b-2 border-[#1C1917] pb-1 uppercase tracking-wider text-sm hover:text-stone-600 hover:border-stone-600 transition-colors">Download Full CV</a>
+			</div>
+		</div>
+
+		<div class="space-y-12">
+			{experiences.map((exp) => (
+				<div class="group relative grid grid-cols-1 md:grid-cols-4 gap-8">
+					<div class="md:col-span-1">
+						<p class="text-stone-600 font-medium">{exp.period}</p>
+						<h4 class="text-stone-500 font-bold mt-1 uppercase tracking-tight text-sm">{exp.company}</h4>
+					</div>
+					<div class="md:col-span-3 pb-12 border-b border-stone-200 group-last:border-0">
+						<h3 class="text-2xl font-bold text-[#1C1917] mb-4 group-hover:text-stone-600 transition-colors">{exp.title}</h3>
+						<ul class="space-y-3 mb-6">
+							{exp.description.map((item) => (
+								<li class="text-[#1C1917] flex items-start">
+									<span class="text-stone-400 mr-3 mt-1.5">•</span>
+									<span>{item}</span>
+								</li>
+							))}
+						</ul>
+						<div class="flex flex-wrap gap-2">
+							{exp.tags.map((tag) => (
+								<span class="px-3 py-1 bg-rose-50/70 text-stone-700 rounded-md text-xs font-semibold uppercase tracking-wider border border-stone-100">{tag}</span>
+							))}
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

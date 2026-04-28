@@ -1,0 +1,66 @@
+---
+const skillGroups = [
+	{
+		name: "Lab Operations & Coordination",
+		skills: ["Strategic Project Coordination", "Lab Operations", "Scheduling", "Capacity Planning", "Resource Allocation", "Skills Repository Management"]
+	},
+	{
+		name: "Operations & Compliance",
+		skills: ["Process Compliance Enforcement", "System Hygiene", "Time Management", "Standard Operating Procedures (SOP)", "Documentation", "Record Management"]
+	},
+	{
+		name: "Technical Solutions",
+		skills: ["Utilization Trend Analysis", "Forecast Reporting", "Microsoft Office Suite", "Data Tracking"]
+	},
+	{
+		name: "Professional Services & Leadership",
+		skills: ["Customer Service", "Project Coordination", "Cross-Team Collaboration", "Confidential Data Handling", "Mentoring & Leadership"]
+	}
+];
+---
+
+<section id="skills" class="py-24 bg-[#FBFBF9] dark:bg-slate-900/50">
+	<div class="container mx-auto px-6">
+		<h2 class="text-4xl font-bold text-[#1C1917] dark:text-white mb-16 text-center">Expertise & Skills</h2>
+		
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+			{skillGroups.map((group) => (
+				<div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-stone-200 dark:border-slate-800 hover:shadow-md transition-shadow">
+					<h3 class="text-xl font-bold text-[#1C1917] dark:text-white mb-6 flex items-center">
+						<span class="w-2 h-8 bg-rose-700 dark:bg-rose-500 rounded-full mr-4"></span>
+						{group.name}
+					</h3>
+					<div class="flex flex-wrap gap-3">
+						{group.skills.map((skill) => (
+							<span class="px-4 py-2 bg-rose-50/70 text-stone-700 rounded-lg text-sm font-medium border border-stone-100">
+								{skill}
+							</span>
+						))}
+					</div>
+				</div>
+			))}
+		</div>
+
+		<div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div class="text-center p-6">
+				<h4 class="text-stone-600 dark:text-slate-500 uppercase tracking-widest text-xs font-bold mb-4">Languages</h4>
+				<div class="space-y-2">
+					<p class="text-[#1C1917] dark:text-white font-bold text-lg">English <span class="text-stone-500 dark:text-slate-600 font-normal text-sm ml-2">— Native</span></p>
+					<p class="text-[#1C1917] dark:text-white font-bold text-lg">Spanish <span class="text-stone-500 dark:text-slate-600 font-normal text-sm ml-2">— Classroom</span></p>
+					<p class="text-[#1C1917] dark:text-white font-bold text-lg">French <span class="text-stone-500 dark:text-slate-600 font-normal text-sm ml-2">— Beginner</span></p>
+				</div>
+			</div>
+			<div class="text-center p-6 border-x border-stone-200 dark:border-slate-800">
+				<h4 class="text-stone-600 dark:text-slate-500 uppercase tracking-widest text-xs font-bold mb-4">Certifications & Honors</h4>
+				<div class="space-y-2">
+					<p class="text-[#1C1917] dark:text-white font-bold text-lg">Psi Chi Honor Society</p>
+					<p class="text-[#1C1917] dark:text-white font-bold text-lg">Dean's List (2025)</p>
+				</div>
+			</div>
+			<div class="text-center p-6">
+				<h4 class="text-stone-600 dark:text-slate-500 uppercase tracking-widest text-xs font-bold mb-4">Conference Presence</h4>
+				<p class="text-[#1C1917] dark:text-white font-bold text-lg leading-snug">Oxford Conference on Breathing, Emotion, and Beyond (2024)</p>
+			</div>
+		</div>
+	</div>
+</section>

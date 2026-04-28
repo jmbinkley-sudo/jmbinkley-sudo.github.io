@@ -1,0 +1,94 @@
+---
+---
+<div class="fixed bottom-8 right-8 z-[100] font-sans">
+	<!-- Chat Window -->
+	<div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 bg-white rounded-2xl shadow-2xl border border-stone-200 overflow-hidden transition-all transform translate-y-4">
+		<div class="bg-[#1C1917] p-4 text-white">
+			<p class="font-bold text-sm tracking-tight uppercase">Josephine AI</p>
+			<p class="text-[10px] text-stone-400 uppercase tracking-widest mt-1">Ask me about my experience</p>
+		</div>
+		<div class="p-4 h-64 overflow-y-auto space-y-4 bg-[#FBFBF9]" id="chat-content">
+			<div class="bg-stone-100 p-3 rounded-2xl rounded-bl-none text-sm text-slate-800">
+				Hi! I'm Josephine's virtual assistant. Type a question below to learn more about my research or experience.
+			</div>
+		</div>
+		
+		<!-- Input Area -->
+		<div class="p-3 border-t border-stone-100 bg-white">
+			<div class="flex gap-2">
+				<input 
+					type="text" 
+					id="chat-input" 
+					placeholder="Type a question..." 
+					class="flex-1 text-xs p-2 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-rose-300"
+				/>
+				<button id="send-btn" class="bg-[#1C1917] text-white p-2 rounded-lg hover:bg-stone-800 transition-colors">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+					</svg>
+				</button>
+			</div>
+			<p class="text-[9px] text-stone-400 mt-2 text-center uppercase tracking-tighter">Try: "research", "skills", or "contact"</p>
+		</div>
+	</div>
+
+	<!-- Toggle Button -->
+	<button id="chat-toggle" class="w-14 h-14 bg-[#1C1917] text-white rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-transform">
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+		</svg>
+	</button>
+</div>
+
+<script is:inline>
+	const toggle = document.getElementById('chat-toggle');
+	const window_el = document.getElementById('chat-window');
+	const content = document.getElementById('chat-content');
+	const input = document.getElementById('chat-input');
+	const sendBtn = document.getElementById('send-btn');
+
+	const responses = {
+		research: "Josephine is currently a Research Assistant at the Schniepp Lab at William & Mary, working on 3D-printed diatom models and ensuring Lab Operations reproducibility.",
+		skills: "Her core expertise includes Neuroscience research, Strategic Project Coordination, Lab Operations, collaborative leadership, and data tracking solutions.",
+		contact: "You can reach Josephine at josiebinkley@outlook.com or connect with her on LinkedIn via the link in the footer!",
+		leadership: "Josephine has extensive leadership experience as a Resident Assistant and Treasurer, focusing on community building and Strategic Project Coordination.",
+		default: "That's a great question! I'm still learning, but you can find more about Josephine's research, impact, and skills on this page. Feel free to reach out to her directly at josiebinkley@outlook.com!"
+	};
+
+	function addMessage(text, isUser = false) {
+		const msg = document.createElement('div');
+		msg.className = isUser 
+			? 'bg-stone-800 text-white p-3 rounded-2xl rounded-br-none text-sm ml-8 animate-in fade-in slide-in-from-bottom-2 duration-300' 
+			: 'bg-stone-100 p-3 rounded-2xl rounded-bl-none text-sm text-slate-800 mr-8 animate-in fade-in slide-in-from-bottom-2 duration-300';
+		msg.innerText = text;
+		content.appendChild(msg);
+		content.scrollTop = content.scrollHeight;
+	}
+
+	function handleSend() {
+		const text = input.value.trim().toLowerCase();
+		if (!text) return;
+
+		addMessage(input.value, true);
+		input.value = '';
+
+		setTimeout(() => {
+			let response = responses.default;
+			if (text.includes('research') || text.includes('lab')) response = responses.research;
+			else if (text.includes('skill') || text.includes('analyst')) response = responses.skills;
+			else if (text.includes('contact') || text.includes('email')) response = responses.contact;
+			else if (text.includes('leadership') || text.includes('impact') || text.includes('ra')) response = responses.leadership;
+			
+			addMessage(response);
+		}, 600);
+	}
+
+	toggle.addEventListener('click', () => {
+		window_el.classList.toggle('hidden');
+	});
+
+	sendBtn.addEventListener('click', handleSend);
+	input.addEventListener('keypress', (e) => {
+		if (e.key === 'Enter') handleSend();
+	});
+</script>
