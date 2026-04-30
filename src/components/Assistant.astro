@@ -41,15 +41,13 @@
 </div>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const toggle = document.getElementById('chat-toggle');
-		const window_el = document.getElementById('chat-window');
-		const content = document.getElementById('chat-content');
-		const input = document.getElementById('chat-input');
-		const sendBtn = document.getElementById('send-btn');
+	const toggle = document.getElementById('chat-toggle');
+	const window_el = document.getElementById('chat-window');
+	const content = document.getElementById('chat-content');
+	const input = document.getElementById('chat-input');
+	const sendBtn = document.getElementById('send-btn');
 
-		if (!toggle || !window_el || !content || !input || !sendBtn) return;
-
+	if (toggle && window_el && content && input && sendBtn) {
 		const responses = {
 		research: "Josephine is an 'Analytical All-Star.' Her work at the Schniepp Lab on 3D-printed diatoms isn't just about science; it’s about ensuring total reproducibility and data integrity. She pairs this technical rigor with the interpersonal leadership skills of an RA, meaning she doesn't just do the research—she helps lead the team that delivers it with absolute professional discretion.",
 		
@@ -167,13 +165,13 @@
 		}, 600);
 	}
 
-	toggle.addEventListener('click', () => {
-		window_el.classList.toggle('hidden');
-	});
+		toggle.addEventListener('click', () => {
+			window_el.classList.toggle('hidden');
+		});
 
-	sendBtn.addEventListener('click', handleSend);
-	input.addEventListener('keypress', (e) => {
-		if (e.key === 'Enter') handleSend();
-	});
-	});
+		sendBtn.addEventListener('click', handleSend);
+		input.addEventListener('keypress', (e) => {
+			if (e.key === 'Enter') handleSend();
+		});
+	}
 </script>
