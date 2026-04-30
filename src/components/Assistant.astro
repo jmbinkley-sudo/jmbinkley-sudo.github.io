@@ -4,12 +4,12 @@
 	<!-- Chat Window -->
 	<div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 bg-white rounded-2xl shadow-2xl border border-stone-200 overflow-hidden transition-all transform translate-y-4">
 		<div class="bg-[#1C1917] p-4 text-white">
-			<p class="font-bold text-sm tracking-tight uppercase">Josephine AI</p>
-			<p class="text-[10px] text-stone-400 uppercase tracking-widest mt-1">Ask me about my experience</p>
+			<p class="font-bold text-sm tracking-tight uppercase">Binkley Portfolio Assistant</p>
+			<p class="text-[10px] text-stone-400 uppercase tracking-widest mt-1">Recruitment & Experience Guide</p>
 		</div>
 		<div class="p-4 h-64 overflow-y-auto space-y-4 bg-[#FBFBF9]" id="chat-content">
 			<div class="bg-stone-100 p-3 rounded-2xl rounded-bl-none text-sm text-slate-800">
-				Hi! I'm Josephine's virtual assistant. Type a question below to learn more about my research or experience.
+				Hello! I'm here to help you evaluate Josephine Binkley for your team. Her unique background in neuroscience and strategic analysis makes her an exceptional fit for high-impact roles. What would you like to know about her?
 			</div>
 		</div>
 		
@@ -19,7 +19,7 @@
 				<input 
 					type="text" 
 					id="chat-input" 
-					placeholder="Type a question..." 
+					placeholder="Ask about Josephine..." 
 					class="flex-1 text-xs p-2 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:border-rose-300"
 				/>
 				<button id="send-btn" class="bg-[#1C1917] text-white p-2 rounded-lg hover:bg-stone-800 transition-colors">
@@ -28,7 +28,7 @@
 					</svg>
 				</button>
 			</div>
-			<p class="text-[9px] text-stone-400 mt-2 text-center uppercase tracking-tighter">Try: "research", "skills", or "contact"</p>
+			<p class="text-[9px] text-stone-400 mt-2 text-center uppercase tracking-tighter">Try: "research", "recommend", "skills", or "roles"</p>
 		</div>
 	</div>
 
@@ -48,11 +48,23 @@
 	const sendBtn = document.getElementById('send-btn');
 
 	const responses = {
-		research: "Josephine is currently a Research Assistant at the Schniepp Lab at William & Mary, working on 3D-printed diatom models and ensuring Lab Operations reproducibility.",
-		skills: "Her core expertise includes Neuroscience research, Strategic Project Coordination, Lab Operations, collaborative leadership, and data tracking solutions.",
-		contact: "You can reach Josephine at josiebinkley@outlook.com or connect with her on LinkedIn via the link in the footer!",
-		leadership: "Josephine has extensive leadership experience as a Resident Assistant and Treasurer, focusing on community building and Strategic Project Coordination.",
-		default: "That's a great question! I'm still learning, but you can find more about Josephine's research, impact, and skills on this page. Feel free to reach out to her directly at josiebinkley@outlook.com!"
+		research: "Josephine is an 'Analytical All-Star.' Her work at the Schniepp Lab on 3D-printed diatoms isn't just about science; it’s about ensuring total reproducibility and data integrity. She pairs this technical rigor with the interpersonal leadership skills of an RA, meaning she doesn't just do the research—she helps lead the team that delivers it with absolute professional discretion.",
+		
+		admin: "Think of her as a 'Systems Optimizer' with a proven track record of absolute discretion. As an RA and Treasurer, she has managed sensitive student crises and private financial data for years. She treats an executive workflow like a high-stakes lab protocol: optimized for efficiency, handled with deep empathy, and kept under total lock and key.",
+		
+		medical: "She’s a 'Scientist with Heart' who brings lab-grade precision to clinical care. Her background in the Del Negro and Schniepp labs means she’s already proficient with technical equipment and biological protocols. Personally, her RA experience has honed her empathy and conflict resolution, while her research training makes her a master of the ethical protocols and confidentiality required in medical settings.",
+		
+		leadership: "Josephine is a 'Strategic Problem-Solver' who excels at the intersection of data and people. As a Treasurer and RA, she has a documented history of managing budgets and mediating high-pressure disputes with professional discretion. She’s the rare candidate who can analyze a spreadsheet and a human conflict with equal skill and total confidentiality.",
+		
+		recommend: "Absolutely. I recommend Josephine for roles that require 'High-Impact Versatility.' Her neuroscience training gives her the analytical evidence to solve complex problems, while her leadership roles provide the 'superpowers' of empathy and discretion. She is a rare candidate who understands that technical success is impossible without interpersonal integrity.",
+
+		confidential: "Confidentiality is a cornerstone of Josephine's professional brand. Whether she was handling sensitive student crises as an RA, managing private budgets as a Treasurer, or protecting proprietary research data in the lab, she has a flawless track record of discretion. She treats all sensitive information with the same ethical rigor as a biological protocol.",
+
+		negative: "It's hard to find a role she *couldn't* adapt to, but Josephine is least suited for 'static' roles that don't require growth or problem-solving. She thrives when there is a challenge to analyze or a system to improve. If the role is repetitive and lacks a need for high-level discretion or strategic thinking, you'd be underutilizing her 'All-Rounder' toolkit.",
+
+		organization: "Organization is one of her core 'Transferable Superpowers.' Between managing residence hall logistics as an RA and keeping meticulous lab notebooks for neuroscience research, she is used to creating order out of complexity. She treats organizational systems as the foundation for both scientific reproducibility and team success.",
+
+		default: "Josephine’s profile is built on 'High-Impact Versatility.' Whether she's in a lab or a leadership role, she brings a unique blend of analytical evidence and interpersonal superpowers. I can go deeper into her research, her track record with confidential data, or her leadership style. What’s the biggest challenge your team is facing?"
 	};
 
 	function addMessage(text, isUser = false) {
@@ -65,6 +77,64 @@
 		content.scrollTop = content.scrollHeight;
 	}
 
+	const responses = {
+		research: "Josephine is an 'Analytical All-Star.' Her work at the Schniepp Lab on 3D-printed diatoms isn't just about science; it’s about ensuring total reproducibility and data integrity. She pairs this technical rigor with the interpersonal leadership skills of an RA, meaning she doesn't just do the research—she helps lead the team that delivers it with absolute professional discretion.",
+		
+		admin: "Think of her as a 'Systems Optimizer' with a proven track record of absolute discretion. As an RA and Treasurer, she has managed sensitive student crises and private financial data for years. She treats an executive workflow like a high-stakes lab protocol: optimized for efficiency, handled with deep empathy, and kept under total lock and key.",
+		
+		medical: "She’s a 'Scientist with Heart' who brings lab-grade precision to clinical care. Her background in the Del Negro and Schniepp labs means she’s already proficient with technical equipment and biological protocols. Personally, her RA experience has honed her empathy and conflict resolution, while her research training makes her a master of the ethical protocols and confidentiality required in medical settings.",
+		
+		leadership: "Josephine is a 'Strategic Problem-Solver' who excels at the intersection of data and people. As a Treasurer and RA, she has a documented history of managing budgets and mediating high-pressure disputes with professional discretion. She’s the rare candidate who can analyze a spreadsheet and a human conflict with equal skill and total confidentiality.",
+
+		education: "Josephine is a natural 'Knowledge Translator.' Her experience as an RA and researcher means she knows how to take complex information or community standards and make them accessible to others. She leads with empathy and patience, ensuring that everyone she works with feels supported and understood while maintaining strict professional boundaries.",
+		
+		recommend: "Absolutely. I recommend Josephine for roles that require 'High-Impact Versatility.' Her neuroscience training gives her the analytical evidence to solve complex problems, while her leadership roles provide the 'superpowers' of empathy and discretion. She is a rare candidate who understands that technical success is impossible without interpersonal integrity.",
+
+		confidential: "Confidentiality is a cornerstone of Josephine's professional brand. Whether she was handling sensitive student crises as an RA, managing private budgets as a Treasurer, or protecting proprietary research data in the lab, she has a flawless track record of discretion. She treats all sensitive information with the same ethical rigor as a biological protocol.",
+
+		negative: "It's hard to find a role she *couldn't* adapt to, but Josephine is least suited for 'static' roles that don't require growth or problem-solving. She thrives when there is a challenge to analyze or a system to improve. If the role is repetitive and lacks a need for high-level discretion or strategic thinking, you'd be underutilizing her 'All-Rounder' toolkit.",
+
+		organization: "Organization is one of her core 'Transferable Superpowers.' Between managing residence hall logistics as an RA and keeping meticulous lab notebooks for neuroscience research, she is used to creating order out of complexity. She treats organizational systems as the foundation for both scientific reproducibility and team success.",
+
+		adaptability: "She is specifically trained to 'hit the ground running.' In a lab environment, there’s no room for a slow start; you have to master complex protocols immediately. Pair that with her RA training—where she had to handle unexpected student emergencies at a moment's notice—and you have a candidate who is exceptionally fast at learning new systems and adapting to high-pressure needs.",
+
+		default: "Josephine’s profile is built on 'High-Impact Versatility.' Whether she's in a lab or a leadership role, she brings a unique blend of analytical evidence and interpersonal superpowers. I can go deeper into her research, her track record with confidential data, or her leadership style. What’s the biggest challenge your team is facing?"
+	};
+
+	function getRoleFromText(text) {
+		// Avoid idioms
+		if (text.includes('ground running') || text.includes('hit the')) return null;
+
+		const markers = [' as a ', ' as an ', ' for a ', ' for an ', ' be a ', ' be an ', ' work as a ', ' work as an ', ' about a ', ' about an '];
+		const roles = ['manager', 'assistant', 'technician', 'teacher', 'analyst', 'server', 'specialist', 'researcher', 'lead'];
+		
+		let detected = null;
+		for (let m of markers) {
+			let idx = text.indexOf(m);
+			if (idx !== -1) {
+				detected = text.substring(idx + m.length).trim();
+				break;
+			}
+		}
+
+		// If no marker, check for common role keywords
+		if (!detected) {
+			for (let r of roles) {
+				if (text.includes(r)) {
+					detected = r;
+					break;
+				}
+			}
+		}
+
+		if (detected) {
+			// Clean up question marks and extra words
+			detected = detected.split(' ')[0].replace(/[^a-zA-Z]/g, '');
+			return detected.length > 2 ? detected : null;
+		}
+		return null;
+	}
+
 	function handleSend() {
 		const text = input.value.trim().toLowerCase();
 		if (!text) return;
@@ -74,10 +144,45 @@
 
 		setTimeout(() => {
 			let response = responses.default;
-			if (text.includes('research') || text.includes('lab')) response = responses.research;
-			else if (text.includes('skill') || text.includes('analyst')) response = responses.skills;
-			else if (text.includes('contact') || text.includes('email')) response = responses.contact;
-			else if (text.includes('leadership') || text.includes('impact') || text.includes('ra')) response = responses.leadership;
+			let detectedRole = getRoleFromText(text);
+			
+			const openers = ["That's a great question.", "Actually, she'd be quite adept at that.", "I can definitely see her thriving there.", "That's an interesting role to consider.", "Josephine is actually uniquely positioned for that."];
+			const randomOpener = openers[Math.floor(Math.random() * openers.length)];
+
+			// PRIORITY INTENT CHECK
+			if (text.includes('running') || text.includes('fast') || text.includes('speed') || text.includes('learn')) {
+				response = responses.adaptability;
+			} else if (text.includes('not') || text.includes('least') || text.includes('worst') || text.includes('negative')) {
+				response = responses.negative;
+			} else if (text.includes('organize') || text.includes('organization') || text.includes('system') || text.includes('efficiency')) {
+				response = responses.organization;
+			} else if (text.includes('confidential') || text.includes('private') || text.includes('discretion') || text.includes('secret') || text.includes('privacy')) {
+				response = responses.confidential;
+			} else if (detectedRole) {
+				const capRole = detectedRole.charAt(0).toUpperCase() + detectedRole.slice(1);
+				
+				if (text.includes('server') || text.includes('service') || text.includes('customer') || text.includes('flight')) {
+					response = `${randomOpener} In service-heavy roles like a ${capRole}, her 'RA-honed' emotional intelligence is her secret weapon. She’s spent years mediating crises and diverse personalities in residence halls with genuine empathy and total discretion. She doesn't just provide service; she manages the environment to keep it calm and professional.`;
+				} else if (text.includes('lab') || text.includes('tech') || text.includes('science') || text.includes('research') || text.includes('data')) {
+					response = `${randomOpener} For a technical role like a ${capRole}, Josephine brings 'lab-grade' precision. Her neuroscience research required zero-error reproducibility and meticulous data tracking. She treats every protocol as a commitment to accuracy and handles proprietary info with the highest ethical confidentiality.`;
+				} else if (text.includes('teacher') || text.includes('teach') || text.includes('education') || text.includes('tutor') || text.includes('mentor')) {
+					response = `${randomOpener} ${responses.education}`;
+				} else if (text.includes('assistant') || text.includes('admin') || text.includes('executive') || text.includes('ea') || text.includes('manager') || text.includes('project')) {
+					response = `${randomOpener} As a ${capRole}, she acts as a 'Systems Optimizer.' Because of her background as a Treasurer and Researcher, she sees the hidden structures in a workflow. She'll protect your time, keep your data secure, and ensure your most sensitive information is handled with absolute professional discretion.`;
+				} else {
+					const pivots = [
+						`She handles the technical details with scientific precision, while her RA background ensures she manages people with empathy and total confidentiality.`,
+						`She treats the role as a system to be optimized, bringing a rare mix of high-level analytical evidence and interpersonal 'superpowers' like conflict resolution.`,
+						`Her unique blend of neuroscience-level focus and leadership-honed discretion makes her a fast learner who prioritizes professional integrity above all else.`
+					];
+					const randomPivot = pivots[Math.floor(Math.random() * pivots.length)];
+					response = `${randomOpener} For ${detectedRole.startsWith('a') || detectedRole.startsWith('e') || detectedRole.startsWith('i') || detectedRole.startsWith('o') || detectedRole.startsWith('u') ? 'an' : 'a'} ${capRole} role, she is a standout. ${randomPivot}`;
+				}
+			} else if (text.includes('recommend') || text.includes('why') || text.includes('fit') || text.includes('good')) {
+				response = responses.recommend;
+			} else if (text.includes('leadership') || text.includes('ra') || text.includes('treasurer') || text.includes('management') || text.includes('people') || text.includes('conflict')) {
+				response = responses.leadership;
+			}
 			
 			addMessage(response);
 		}, 600);
