@@ -40,14 +40,17 @@
 	</button>
 </div>
 
-<script is:inline>
-	const toggle = document.getElementById('chat-toggle');
-	const window_el = document.getElementById('chat-window');
-	const content = document.getElementById('chat-content');
-	const input = document.getElementById('chat-input');
-	const sendBtn = document.getElementById('send-btn');
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const toggle = document.getElementById('chat-toggle');
+		const window_el = document.getElementById('chat-window');
+		const content = document.getElementById('chat-content');
+		const input = document.getElementById('chat-input');
+		const sendBtn = document.getElementById('send-btn');
 
-	const responses = {
+		if (!toggle || !window_el || !content || !input || !sendBtn) return;
+
+		const responses = {
 		research: "Josephine is an 'Analytical All-Star.' Her work at the Schniepp Lab on 3D-printed diatoms isn't just about science; it’s about ensuring total reproducibility and data integrity. She pairs this technical rigor with the interpersonal leadership skills of an RA, meaning she doesn't just do the research—she helps lead the team that delivers it with absolute professional discretion.",
 		
 		admin: "Think of her as a 'Systems Optimizer' with a proven track record of absolute discretion. As an RA and Treasurer, she has managed sensitive student crises and private financial data for years. She treats an executive workflow like a high-stakes lab protocol: optimized for efficiency, handled with deep empathy, and kept under total lock and key.",
@@ -76,30 +79,6 @@
 		content.appendChild(msg);
 		content.scrollTop = content.scrollHeight;
 	}
-
-	const responses = {
-		research: "Josephine is an 'Analytical All-Star.' Her work at the Schniepp Lab on 3D-printed diatoms isn't just about science; it’s about ensuring total reproducibility and data integrity. She pairs this technical rigor with the interpersonal leadership skills of an RA, meaning she doesn't just do the research—she helps lead the team that delivers it with absolute professional discretion.",
-		
-		admin: "Think of her as a 'Systems Optimizer' with a proven track record of absolute discretion. As an RA and Treasurer, she has managed sensitive student crises and private financial data for years. She treats an executive workflow like a high-stakes lab protocol: optimized for efficiency, handled with deep empathy, and kept under total lock and key.",
-		
-		medical: "She’s a 'Scientist with Heart' who brings lab-grade precision to clinical care. Her background in the Del Negro and Schniepp labs means she’s already proficient with technical equipment and biological protocols. Personally, her RA experience has honed her empathy and conflict resolution, while her research training makes her a master of the ethical protocols and confidentiality required in medical settings.",
-		
-		leadership: "Josephine is a 'Strategic Problem-Solver' who excels at the intersection of data and people. As a Treasurer and RA, she has a documented history of managing budgets and mediating high-pressure disputes with professional discretion. She’s the rare candidate who can analyze a spreadsheet and a human conflict with equal skill and total confidentiality.",
-
-		education: "Josephine is a natural 'Knowledge Translator.' Her experience as an RA and researcher means she knows how to take complex information or community standards and make them accessible to others. She leads with empathy and patience, ensuring that everyone she works with feels supported and understood while maintaining strict professional boundaries.",
-		
-		recommend: "Absolutely. I recommend Josephine for roles that require 'High-Impact Versatility.' Her neuroscience training gives her the analytical evidence to solve complex problems, while her leadership roles provide the 'superpowers' of empathy and discretion. She is a rare candidate who understands that technical success is impossible without interpersonal integrity.",
-
-		confidential: "Confidentiality is a cornerstone of Josephine's professional brand. Whether she was handling sensitive student crises as an RA, managing private budgets as a Treasurer, or protecting proprietary research data in the lab, she has a flawless track record of discretion. She treats all sensitive information with the same ethical rigor as a biological protocol.",
-
-		negative: "It's hard to find a role she *couldn't* adapt to, but Josephine is least suited for 'static' roles that don't require growth or problem-solving. She thrives when there is a challenge to analyze or a system to improve. If the role is repetitive and lacks a need for high-level discretion or strategic thinking, you'd be underutilizing her 'All-Rounder' toolkit.",
-
-		organization: "Organization is one of her core 'Transferable Superpowers.' Between managing residence hall logistics as an RA and keeping meticulous lab notebooks for neuroscience research, she is used to creating order out of complexity. She treats organizational systems as the foundation for both scientific reproducibility and team success.",
-
-		adaptability: "She is specifically trained to 'hit the ground running.' In a lab environment, there’s no room for a slow start; you have to master complex protocols immediately. Pair that with her RA training—where she had to handle unexpected student emergencies at a moment's notice—and you have a candidate who is exceptionally fast at learning new systems and adapting to high-pressure needs.",
-
-		default: "Josephine’s profile is built on 'High-Impact Versatility.' Whether she's in a lab or a leadership role, she brings a unique blend of analytical evidence and interpersonal superpowers. I can go deeper into her research, her track record with confidential data, or her leadership style. What’s the biggest challenge your team is facing?"
-	};
 
 	function getRoleFromText(text) {
 		// Avoid idioms
@@ -195,5 +174,6 @@
 	sendBtn.addEventListener('click', handleSend);
 	input.addEventListener('keypress', (e) => {
 		if (e.key === 'Enter') handleSend();
+	});
 	});
 </script>
